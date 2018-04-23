@@ -1,5 +1,5 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
 using namespace std;
 
 class Ponto{
@@ -73,25 +73,41 @@ public:
       vertices[i].Ponto::translada(a,b);
     }
   };
-  void rotaciona(float teta){
+  void rotaciona(float teta, float _x, float _y){
     float novo_x=0, novo_y=0;
+    teta = teta*3.14159265359/180;
     for(int i=0; i<qtd; i++){
-      novo_x = vertices[i].getX()*cos(teta) - vertices[i].getY()*sin(teta);
-      novo_y = vertices[i].getX()*sin(teta) + vertices[i].getY()*cos(teta);
-      vertices[i].setXY(novo_x, novo_y);
+      novo_x = (vertices[i].getX()-_x)*cos(teta) - (vertices[i].getY()-_y)*sin(teta);
+      novo_y = (vertices[i].getX()-_x)*sin(teta) + (vertices[i].getY()-_y)*cos(teta);
+      vertices[i].setXY(novo_x+_x, novo_y+_y);
       vertices[i].imprime();
     }
   };
 };
 
+class Retangulo : public Poligono
+{
+    float largura, altura;
+public:
+  Retangulo(float x, float y, float larg, float alt)
+{
+    largura = larg;
+    altura = alt;
+    insereVertice(x, y);
+    insereVertice(x+largura, y);
+    insereVertice(x+largura, y-altura);
+    insereVertice(x, y-altura);
+}
+};
+
 int main(){
   Ponto a, b;
-  Poligono forma;
-  forma.insereVertice(0,0);
-  forma.insereVertice(0,5);
-  forma.insereVertice(5,5);
-  forma.insereVertice(5,0);
-  forma.rotaciona(3.14159265359);
+  Retangulo forma(0,6,6,6);
+  // forma.insereVertice(0,0);
+  // forma.insereVertice(0,5);
+  // forma.insereVertice(5,5);
+  // forma.insereVertice(5,0);
+  forma.rotaciona(30,3,3);
   cout<<forma.getArea();
   // a.setXY(3,4);
   // b.setXY(2,0);
