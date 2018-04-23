@@ -2,43 +2,89 @@
 #include <cmath>
 using namespace std;
 
+//!  A Ponto class.
+/*!
+  A more elaborate class description.
+*/
 class Ponto{
 private:
   float x, y;
 public:
+  //! Método que seta um valor para a coordenada X do ponto.
+    /*!
+      \param _x argumento float.
+    */
   void setX(float _x){
     x=_x;
   };
+  //! Método que seta um valor para a coordenada Y do ponto.
+    /*!
+      \param _y argumento float.
+    */
   void setY(float _y){
     y=_y;
   };
+  //! Método que seta os valores para as coordenadas X e Y do ponto.
+    /*!
+      \param _x argumento float.
+      \param _y argumento float.
+    */
   void setXY(float _x, float _y){
     x=_x;
     y=_y;
   };
+  //! Método que retorna a coordenada X do ponto
+    /*!
+    \return Coordenada X (float)
+    */
   float getX(){
     return x;
   };
+  //! Método que retorna a coordenada Y do ponto
+    /*!
+    \return Coordenada Y (float)
+    */
   float getY(){
     return y;
   };
+  //! Método que soma as coordenadas X e Y com as coordenadas de um ponto passado no argumento.
+    /*!
+      \param p1 um argumento do tipo Ponto.
+      \return Um Ponto resultante da soma dos dois.
+    */
   Ponto add(Ponto p1){
     Ponto ret;
     ret.setXY(x+p1.getX(), y+p1.getY());
     return (ret);
   };
+  //! Método que subtrai as coordenadas X e Y das coordenadas de um ponto passado no argumento.
+    /*!
+      \param p1 um argumento do tipo Ponto.
+      \return Um Ponto resultante da subtração dos dois.
+    */
   Ponto sub(Ponto p1){
     Ponto ret;
     ret.setXY(x-p1.getX(), y-p1.getY());
     return (ret);
   };
+  //! Método que retorna o módulo de um vetor partindo da origem e indo até o ponto.
+    /*!
+      \return A norma do vetor da origem ao ponto, do tipo float.
+    */
   float norma(){
     return (sqrt((x*x)+(y*y)));
   };
+  //! Método que recebe dois valores e adiciona o primeiro ao X e o segundo ao Y, transladando o ponto.
+    /*!
+      \param a um argumento do tipo float.
+      \param b um argumento do tipo float.
+    */
   void translada(float a, float b){
     x=x+a;
     y=y+b;
   };
+  //! Método que imprime as coordenadas do ponto, no formato (x,y).
+
   void imprime(){
     cout<<"("<<x<<", "<<y<<")\n";
   };
@@ -107,7 +153,7 @@ int main(){
   // forma.insereVertice(0,5);
   // forma.insereVertice(5,5);
   // forma.insereVertice(5,0);
-  forma.rotaciona(30,3,3);
+  forma.rotaciona(30,10,10);
   cout<<forma.getArea();
   // a.setXY(3,4);
   // b.setXY(2,0);
