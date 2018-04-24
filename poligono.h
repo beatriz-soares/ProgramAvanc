@@ -1,9 +1,9 @@
 #ifndef POLIGONO_H
 #define POLIGONO_H
 #include "ponto.h"
-//!  A Poligono class.
+//!  Classe Poligono.
 /*!
-  A more elaborate class description.
+  Classe para representar polígonos convexos. O tamanho dos polígonos será limitado a 100 vértices. Cada vértice do polígono é um objeto do tipo Ponto.
 */
 class Poligono
 {
@@ -36,7 +36,7 @@ public:
         \param b float que será somado com as coordenadas Y dos pontos.
       */
     void translada(float a, float b);
-    //! Método que rotaciona o polígono, a partir de um ponto, em teta graus.
+    //! Método que rotaciona o polígono, a partir de um ponto, em teta graus no sentido anti-horário.
       /*!
         \param teta float indicará o ângulo em que o poligono será rotacionado.
         \param _x float que indica a coordenada X do ponto de referência da rotação.

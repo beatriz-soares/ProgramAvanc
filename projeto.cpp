@@ -1,10 +1,30 @@
 #include <iostream>
 #include <cmath>
 using namespace std;
+  /*! \mainpage Projeto 1 - Tratamento de polígonos
+ *
+ * \section intro Introdução
+ *
+ * Este projeto é um instrumento avaliativo da segunda unidade da turma DCA1202 - Programação Avançada, lecionada pelo professor Agostinho Brito. O projeto é capaz de armazenar e realizar operações com polígonos formados por conjuntos de pontos em duas dimensões.
 
-//!  A Ponto class.
+Está previsto no projeto a criação de três classes, referenciadas a seguir:
+
+Ponto
+
+Poligono
+
+Retangulo
+
+
+ *
+ * \section componente Componente
+ *
+ * \subsection nome Beatriz Soares de Souza - 2016021417
+ *
+ */
+//!  Classe Ponto.
 /*!
-  A more elaborate class description.
+  Classe para representar pontos no espaço bidimensional. São encapsuladas duas variáveis x e y do tipo float para guardar a posição do ponto. Apenas as funções da classe poderão ter acesso direto a essas variávies, de modo que os clientes da classe somente poderão modificá-las usando métodos específicos descritos nessa documentação.
 */
 class Ponto{
 private:
